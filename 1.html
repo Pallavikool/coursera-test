@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html ng-app="AppController">
+<title> Angular-102: Counting Words in Textarea </title>
+<head></head>
+<body>
+ <p id="sampleText"> Mein Name ist Kleinelefant. Hallo, wie geht's dir! </p>
+  <div ng-controller="WordController as wordsController">
+     <p  ng-model="wordsController.CharacterLength" >You have entered <font ng-style="wordsController.FontStyle">{{wordsController.CharacterLength}} </font>/100 characters</p>
+    
+    <p ng-model="wordsController.WordsLength"> You have entered <font ng-style="wordsController.FontStyle">{{wordsController.WordsLength}}</font>/10 words </p>
+    
+    <Textarea name="TextField" ng-model="wordsController.Text" ng-change="wordsController.UpdateLengths()" ng-trim="false" rows=5 cols=50 maxlength="100"> </textarea>
+  </div>
+</body>
+</html>

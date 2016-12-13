@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+    var module=angular.module('DemoApp',function($scope){
+      $scope.message="welcome..";
+      $scope.ShowOutput=function(food){
+        var fooditems=food.split(;);
+        if(fooditems==0)
+        {
+          $scope.message="Enter food..";
+        }
+        else if (fooditems>0 && fooditems<=3) {
+          $scope.message="Enjoy..";
+        }
+
+        else(fooditems>3) {
+          $scope.message="Invalid choice..";
+        }
+
+      }
+    });
+    </script>
+  </head>
+  <body>
+    <div data-ng-controller="DemoController" data-ng-app="DemoApp">
+      <form name="dashboardForm" novalidate>
+        <input type="text" ng-list data-ng-model="food" placeholder="Enter Food"/>
+        <input type="button" data-ng-click="ShowOutput(food)" value="Submit"/>
+        <br/><br/>
+        <label for="message" data-ng-bind="message"></label>
+      </form>
+    </div>
+  </body>
+</html>

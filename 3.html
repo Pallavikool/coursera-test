@@ -1,0 +1,15 @@
+<!doctype html>
+ <html ng-app>
+ <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="wordcount.js"></script>
+ </head>
+ <body>
+    <div ng-controller="wordCount">
+        <label>Copy and Paste your text:</label><br>
+        <textarea cols="80" rows="20" ng-model="mytext"></textarea>
+        <hr>
+        <span>{{wordCount()}} word(s)</span>
+    </div>
+ </body>
+</html>
